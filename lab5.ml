@@ -28,11 +28,12 @@ introduced in the skeleton code below. For instance, you might want to
 add a "rec", or use a different argument list, or no argument list at
 all but binding to an anonymous function instead.) *)
 
-let inc =
-  let ctr = ref 0 in
+let inc _ = failwith "inc not implemented"
+
+(*   let ctr = ref 0 in
     fun () -> 
       ctr := !ctr + 1;
-      !ctr ;;
+      !ctr ;; *)
 
 (* Write a function named remember that returns the last string that
 it was called with. The first time it is called, it should return the
