@@ -50,14 +50,14 @@ This is probably the least functional function ever written.
 As usual, you shouldn't feel beholden to how the definition is
 introduced in the skeleton code below. *)
 
-let remember =
-  let memory = ref "" in 
+let remember = failwith "error, fixing for compilation" ;;
+  (* let memory = ref "" in 
   let remember' (r : string) : string = 
     let readout = !memory in 
     memory := r;
     readout
   in
-  remember' ;;
+  remember' ;; *)
 
 
     
