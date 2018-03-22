@@ -28,12 +28,11 @@ introduced in the skeleton code below. For instance, you might want to
 add a "rec", or use a different argument list, or no argument list at
 all but binding to an anonymous function instead.) *)
 
-let inc _ = failwith "inc not implemented"
-
-(*   let ctr = ref 0 in
+let inc =
+  let ctr = ref 0 in
     fun () -> 
       ctr := !ctr + 1;
-      !ctr ;; *)
+      !ctr ;;
 
 (* Write a function named remember that returns the last string that
 it was called with. The first time it is called, it should return the
@@ -51,8 +50,17 @@ This is probably the least functional function ever written.
 As usual, you shouldn't feel beholden to how the definition is
 introduced in the skeleton code below. *)
 
-let remember _ = 
-  failwith "remember not implemented" ;;
+let remember =
+  let memory = ref "" in 
+  let remember' (r : string) : string = 
+    let readout = !memory in 
+    memory := r;
+    readout
+  in
+  remember' ;;
+
+
+    
 
 (*====================================================================
 Part 2: Gensym
